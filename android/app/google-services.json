@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "672813027237",
+    "project_id": "shortsocial-a88f2",
+    "storage_bucket": "shortsocial-a88f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672813027237:android:cda50b83634a4d2bbda24c",
+        "android_client_info": {
+          "package_name": "io.lunchclub.shortsocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672813027237-nuacnt67vl2ngn49j2bc8vbn8eslnlbn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbQCO_GBsYVZtEC5VtIzWEAolY-oKCKy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672813027237-nuacnt67vl2ngn49j2bc8vbn8eslnlbn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
