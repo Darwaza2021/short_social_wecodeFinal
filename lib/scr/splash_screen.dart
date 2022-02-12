@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shortsocial/login_screen.dart';
-import 'package:shortsocial/register_screen.dart';
+import 'package:shortsocial/scr/login_screen.dart';
+import 'package:shortsocial/scr/register_screen.dart';
 
 
 class SplashScreenView extends StatelessWidget {
@@ -28,7 +28,7 @@ class SplashScreenView extends StatelessWidget {
                
                    ElevatedButton(
                      onPressed: (){
-                       Navigator.pushNamed(context,Login_screen_view.routName );
+                       Navigator.pushNamed(context,"login_scr");
                      },
                     child: Text("Login"),
                   
@@ -36,7 +36,7 @@ class SplashScreenView extends StatelessWidget {
 
                     ElevatedButton(
                      onPressed: (){
-                      Navigator.pushNamed(context,RegisterScreenView.routName );
+                      Navigator.pushNamed(context,"register_scr" );
 
                      },
                     child: Text("Register")

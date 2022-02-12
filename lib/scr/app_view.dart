@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shortsocial/register_screen.dart';
-import 'package:shortsocial/splash_screen.dart';
+import 'package:shortsocial/scr/register_screen.dart';
+import 'package:shortsocial/scr/splash_screen.dart';
+import 'package:shortsocial/scr/user_dashboard_screen.dart';
 
 import 'login_screen.dart';
 
@@ -25,6 +26,7 @@ class _AppViewState extends State<AppView> {
     "/":(context)=>SplashScreenView(),
     "login_scr":(context)=>Login_screen_view(),
     "register_scr":(context)=>RegisterScreenView(),
+    "user_dashbord_scr":(context)=>UserDashboard(),
   },
 
     );
