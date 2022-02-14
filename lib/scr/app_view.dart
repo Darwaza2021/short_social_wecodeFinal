@@ -17,12 +17,15 @@ class _AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
+      
 
     
 
    initialRoute: "/",
   routes: {
 
+    //"/":(context)=>Notification_view(),
     "/":(context)=>SplashScreenView(),
     "login_scr":(context)=>Login_screen_view(),
     "register_scr":(context)=>RegisterScreenView(),

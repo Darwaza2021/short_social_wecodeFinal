@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shortsocial/scr/login_screen.dart';
 import 'package:shortsocial/scr/register_screen.dart';
 
@@ -24,6 +25,13 @@ class SplashScreenView extends StatelessWidget {
           
 
               children: [
+
+                Lottie.network('https://assets9.lottiefiles.com/packages/lf20_x2ejxgsa.json',
+                 width: 400,
+                 height: 400 ),
+                // Lottie.asset('assets/d.json',
+                // width: 400,
+                // height: 400),
 
                
                    ElevatedButton(

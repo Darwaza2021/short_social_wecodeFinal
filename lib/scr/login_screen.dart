@@ -11,7 +11,6 @@ class Login_screen_view extends StatefulWidget {
 
 class _Login_screen_viewState extends State<Login_screen_view> {
   TextEditingController _emailContoller = TextEditingController();
-
   TextEditingController _passwordController = TextEditingController();
 
    var isValid = false;
@@ -65,7 +64,7 @@ class _Login_screen_viewState extends State<Login_screen_view> {
               SizedBox(height: 25,),
 
                   ElevatedButton(
-                     onPressed:   _trySubmit,
+                     onPressed:   _tryLogin,
                      
                      
                      
@@ -81,7 +80,7 @@ class _Login_screen_viewState extends State<Login_screen_view> {
   }
 
   //trySUbmit funcion after pressed the submit button
-   void _trySubmit() async {
+   void _tryLogin() async {
     FocusScope.of(context).unfocus();
 
     if (_formKey.currentState!.validate()) {
