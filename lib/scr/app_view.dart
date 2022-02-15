@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shortsocial/scr/register_screen.dart';
 import 'package:shortsocial/scr/splash_screen.dart';
-import 'package:shortsocial/scr/user_dashboard_screen.dart';
+import 'package:shortsocial/scr/general_user/user_dashboard_screen.dart';
 
 import 'login_screen.dart';
 

@@ -7,7 +7,10 @@ class UserDashboard extends StatefulWidget {
   _UserDashboardState createState() => _UserDashboardState();
 }
 
+
 class _UserDashboardState extends State<UserDashboard> {
+
+  String? username;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +63,8 @@ class _UserDashboardState extends State<UserDashboard> {
         ),
          
       ),
-      
+
+
     );
   }
 }

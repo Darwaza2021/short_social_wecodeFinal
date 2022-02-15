@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shortsocial/data_model/general_user.dart';
+import 'package:shortsocial/services/firestore_service.dart';
 
 class RegisterScreenView extends StatefulWidget {
    RegisterScreenView({ Key? key }) : super(key: key);
@@ -11,6 +13,9 @@ class RegisterScreenView extends StatefulWidget {
 
 class _RegisterScreenViewState extends State<RegisterScreenView> {
 
+
+final FirestoreServices _firestoreServices = FirestoreServices();
+
   TextEditingController _emailContoller = TextEditingController();
 
   TextEditingController _passwordController = TextEditingController();
@@ -19,6 +24,9 @@ class _RegisterScreenViewState extends State<RegisterScreenView> {
 
     final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
     final FirebaseFirestore  _firebaseFirestore = FirebaseFirestore.instance;
+
+
+    
 
   var isValid = false;
 
@@ -105,9 +113,11 @@ class _RegisterScreenViewState extends State<RegisterScreenView> {
 
                   ElevatedButton(
                      onPressed: _trySubmit,
+                      
+                    child: Text("Register"),
                      
-                    child: Text("Login")
-                 ),
+                  ),
+
             ],
           ),
           ),
@@ -129,8 +139,20 @@ class _RegisterScreenViewState extends State<RegisterScreenView> {
       print( 'register form error =========>' + e.message!);
 
     }
-  
-    
+
+     GeneralUser _newUser = GeneralUser(
+                            email: _emailContoller.value.text,
+                            job:_jobController.value.text,
+                            password: _passwordController.value.text,
+                            username: _usernameController.value.text,
+
+                        );
+
+                      await _firestoreServices.addNewUser(_newUser);
+                      
+                  
+                    
+                    
     if (isValid) {
       // if the form text fields are valid
       print(_emailContoller.text);

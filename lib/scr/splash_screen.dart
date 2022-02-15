@@ -20,54 +20,57 @@ class SplashScreenView extends StatelessWidget {
         body: Row(
           mainAxisAlignment:MainAxisAlignment.center,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-          
-
-              children: [
-
-                Text("Welcome",
-                style: TextStyle(
-                  fontSize: 45,
-                )),
-
-                Lottie.network('https://assets9.lottiefiles.com/packages/lf20_x2ejxgsa.json',
-                 width: 401,
-                 height: 400 ),
-                // Lottie.asset('assets/d.json',
-                // width: 400,
-                // height: 400),
-
-               
-                   ElevatedButton(
-                     onPressed: (){
-                       Navigator.pushNamed(context,"login_scr");
-                     },
-                    child: Text("Login"),
-                  
-                  style: ElevatedButton.styleFrom(fixedSize: Size(200, 40)),
-
-                 ),
-
-                    ElevatedButton(
-                     onPressed: (){
-                      Navigator.pushNamed(context,"register_scr" );
-
-                     },
-                    child: Text("Register"),
-
-                    style: ElevatedButton.styleFrom(fixedSize: Size(200, 40)),
-
-
-                    ),
+            SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                      
+            
+                children: [
+                  SizedBox(height: 150,),
+            
+                  Text("Welcome",
+                  style: TextStyle(
+                    fontSize: 45,
+                  )),
+            
+                  Lottie.network('https://assets9.lottiefiles.com/packages/lf20_x2ejxgsa.json',
+                   width: 401,
+                   height: 400 ),
+                  // Lottie.asset('assets/d.json',
+                  // width: 400,
+                  // height: 400),
+            
                  
-        
-
-
-
-
-
-              ],
+                     ElevatedButton(
+                       onPressed: (){
+                         Navigator.pushNamed(context,"login_scr");
+                       },
+                      child: Text("Login"),
+                    
+                    style: ElevatedButton.styleFrom(fixedSize: Size(200, 40)),
+            
+                   ),
+            
+                      ElevatedButton(
+                       onPressed: (){
+                        Navigator.pushNamed(context,"register_scr" );
+            
+                       },
+                      child: Text("Register"),
+            
+                      style: ElevatedButton.styleFrom(fixedSize: Size(200, 40)),
+            
+            
+                      ),
+                   
+                    
+            
+            
+            
+            
+            
+                ],
+              ),
             ),
           ],
         )
