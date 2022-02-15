@@ -62,7 +62,8 @@ class _RegisterScreenViewState extends State<RegisterScreenView> {
                   )
                 ),
               ),
-              
+              SizedBox(height: 25,),
+
               TextFormField(
                 controller:_usernameController ,
                 decoration: InputDecoration(

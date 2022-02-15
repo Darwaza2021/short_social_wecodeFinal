@@ -26,6 +26,11 @@ class SplashScreenView extends StatelessWidget {
 
               children: [
 
+                Text("Welcome",
+                style: TextStyle(
+                  fontSize: 45,
+                )),
+
                 Lottie.network('https://assets9.lottiefiles.com/packages/lf20_x2ejxgsa.json',
                  width: 401,
                  height: 400 ),
@@ -40,6 +45,8 @@ class SplashScreenView extends StatelessWidget {
                      },
                     child: Text("Login"),
                   
+                  style: ElevatedButton.styleFrom(fixedSize: Size(200, 40)),
+
                  ),
 
                     ElevatedButton(
@@ -47,8 +54,14 @@ class SplashScreenView extends StatelessWidget {
                       Navigator.pushNamed(context,"register_scr" );
 
                      },
-                    child: Text("Register")
-                 ),
+                    child: Text("Register"),
+
+                    style: ElevatedButton.styleFrom(fixedSize: Size(200, 40)),
+
+
+                    ),
+                 
+        
 
 
 
