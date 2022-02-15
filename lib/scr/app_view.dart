@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shortsocial/scr/general_user/edit_profile_screen.dart';
 import 'package:shortsocial/scr/register_screen.dart';
 import 'package:shortsocial/scr/splash_screen.dart';
 import 'package:shortsocial/scr/general_user/user_dashboard_screen.dart';
@@ -39,7 +40,8 @@ class _AppViewState extends State<AppView> {
   routes: {
 
     //"/":(context)=>Notification_view(),
-    "/":(context)=>SplashScreenView(),
+    "/":(context)=>EditProfileScreenView(),
+    //"/":(context)=>SplashScreenView(),
     "login_scr":(context)=>Login_screen_view(),
     "register_scr":(context)=>RegisterScreenView(),
     "user_dashbord_scr":(context)=>UserDashboard(),
