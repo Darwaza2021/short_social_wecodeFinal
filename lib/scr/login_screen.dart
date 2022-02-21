@@ -22,6 +22,8 @@ class _Login_screen_viewState extends State<Login_screen_view> {
   Widget build(BuildContext context) {
     return Scaffold(
 
+      
+
       appBar: AppBar(
         title: Text("Login"),
       ),
@@ -33,7 +35,9 @@ class _Login_screen_viewState extends State<Login_screen_view> {
             key: _formKey,
             child: Column(
               
+
             children: [
+
               SizedBox(height: 100,),
 
               TextFormField(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shortsocial/data_model/general_user.dart';
 
 class UserDashboard extends StatefulWidget {
-  const UserDashboard({ Key? key }) : super(key: key);
+  const UserDashboard({ Key? key,this.general_User }) : super(key: key);
+  final GeneralUser? general_User;
 
   @override
   _UserDashboardState createState() => _UserDashboardState();
@@ -11,6 +13,7 @@ class UserDashboard extends StatefulWidget {
 class _UserDashboardState extends State<UserDashboard> {
 
   String? username;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

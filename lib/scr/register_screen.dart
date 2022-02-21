@@ -137,22 +137,19 @@ final FirestoreServices _firestoreServices = FirestoreServices();
 
     } on FirebaseAuthException catch (e) {
       print( 'register form error =========>' + e.message!);
-
     }
+
 
      GeneralUser _newUser = GeneralUser(
                             email: _emailContoller.value.text,
                             job:_jobController.value.text,
                             password: _passwordController.value.text,
                             username: _usernameController.value.text,
-
+                            uid: _firebaseAuth.currentUser!.uid,
                         );
 
                       await _firestoreServices.addNewUser(_newUser);
-                      
-                  
-                    
-                    
+         
     if (isValid) {
       // if the form text fields are valid
       print(_emailContoller.text);

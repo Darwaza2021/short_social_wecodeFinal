@@ -19,11 +19,6 @@ GeneralUser({
     this.job,
   });
 
-
-
-
-
-
   GeneralUser copyWith({
     String? email,
     String? username,

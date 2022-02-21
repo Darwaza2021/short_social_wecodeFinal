@@ -40,8 +40,9 @@ class _AppViewState extends State<AppView> {
   routes: {
 
     //"/":(context)=>Notification_view(),
-    "/":(context)=>EditProfileScreenView(),
-    //"/":(context)=>SplashScreenView(),
+    //"/":(context)=>NewSql(),
+    //
+    "/":(context)=>SplashScreenView(),
     "login_scr":(context)=>Login_screen_view(),
     "register_scr":(context)=>RegisterScreenView(),
     "user_dashbord_scr":(context)=>UserDashboard(),
