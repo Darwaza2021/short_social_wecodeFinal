@@ -1,70 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shortsocial/data_model/general_user.dart';
+import 'package:shortsocial/scr/general_user/add_post_screen.dart';
+import 'package:shortsocial/scr/general_user/home_dashbord_screen.dart';
+import 'package:shortsocial/scr/general_user/view_post.dart';
 
 class UserDashboard extends StatefulWidget {
-  const UserDashboard({ Key? key,this.general_User }) : super(key: key);
-  final GeneralUser? general_User;
+  const UserDashboard({ Key? key }) : super(key: key);
 
   @override
   _UserDashboardState createState() => _UserDashboardState();
 }
-
-
 class _UserDashboardState extends State<UserDashboard> {
 
-  String? username;
+
+   int _currentIndex = 0;
+  List<Widget> _screens = [HomeDashboardScreenView(),AddPostView(), ViewPostScreenView()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      title: Text("User Dashboard"),
-      centerTitle: true,
-      ),
+     
+  
+      body: _screens[_currentIndex], 
+       bottomNavigationBar: BottomNavigationBar(
 
-      drawer:  Drawer(
-        child:ListView(
-          children:[
-            UserAccountsDrawerHeader(
-              currentAccountPicture: new CircleAvatar(
-                backgroundImage: NetworkImage("https://images.unsplash.com/photo-1551847812-f815b31ae67c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"),
-              ),
-              accountName: Text("Student Name"), 
-              accountEmail: Text("Student@gmail.com"),
-              decoration:BoxDecoration(
-                color: Colors.cyan,
-              ) ,
-              ),
-              ListTile(
-                title: Text("Home"),
-                leading: Icon(Icons.home),
+           currentIndex: _currentIndex,
+        onTap: (_tappedIndex) {
+          setState(() {
+            _currentIndex = _tappedIndex;
+          });
+        },
+        items: const <BottomNavigationBarItem>[
 
-                onTap:(){
-
-                } ,
-              ),
-              ListTile(
-                title: Text("Edit Profile"),
-                leading: Icon(Icons.edit),
-
-                // onTap:(){
-                //   Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => StudentSettingsScreen(),
-                //   ),
-                // );
-                // } ,
-              ),
-              ListTile(
-                title: Text("Logout"),
-                leading: Icon(Icons.logout),
-
-                onTap:(){} ,
-              )
-          ]
-        ),
-         
+           BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.post_add),
+            label: 'Add Post',
+            backgroundColor: Colors.red,
+            
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.view_list),
+            label: 'View Posts',
+            backgroundColor: Colors.green,
+          ),
+          
+        ],
       ),
 
 
