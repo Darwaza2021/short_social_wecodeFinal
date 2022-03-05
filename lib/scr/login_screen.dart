@@ -26,12 +26,15 @@ class _Login_screen_viewState extends State<Login_screen_view> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(10),
-      
+          padding: EdgeInsets.fromLTRB(10, 40, 10, 10),
           child: Form(
             key: _formKey,
             child: Column(
               children: [
+                Image.asset(
+                  'asset/logo.png',
+                  width: 250,
+                ),
                 SizedBox(
                   height: 100,
                 ),
@@ -59,16 +62,13 @@ class _Login_screen_viewState extends State<Login_screen_view> {
                 ),
                 ElevatedButton(
                   onPressed: _tryLogin,
-                   child: Text("Login"),
+                  child: Text("Login"),
                   style: ElevatedButton.styleFrom(
-                    fixedSize: Size(200, 40),
-                    textStyle: TextStyle(
-                      fontSize: 20,
-                    
-                    )
-                  ),
-
-                   ),
+                      fixedSize: Size(200, 40),
+                      textStyle: TextStyle(
+                        fontSize: 20,
+                      )),
+                ),
               ],
             ),
           ),

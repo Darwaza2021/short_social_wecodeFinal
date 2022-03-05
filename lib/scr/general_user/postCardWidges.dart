@@ -43,7 +43,7 @@ class PostCardWidges extends StatelessWidget {
                       child: Column(
                         children: [
                           Text('likes'),
-                          Text(post.like.toString()),
+                          Text('2'),
                         ],
                       ),
                     ),
@@ -60,6 +60,4 @@ class PostCardWidges extends StatelessWidget {
   FaIcon(heart) {}
 }
 
-class FontAwesomeIcons {
-  static var heart;
-}
+

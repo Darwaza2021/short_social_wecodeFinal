@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shortsocial/data_model/posts.dart';
 import 'package:shortsocial/scr/general_user/postCardWidges.dart';
 import 'package:shortsocial/services/firestore_service.dart';
-
 import '../../data_model/general_user.dart';
 
 class ViewPostScreenView extends StatefulWidget {
@@ -41,10 +40,15 @@ class _ViewPostScreenViewState extends State<ViewPostScreenView> {
                   return ListView.builder(
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
-                      return Container(
-                          height: 100,
-                          child: PostCardWidges(post:snapshot.data![index])
-                          
+                      return Column(
+                        children: [
+                          SizedBox(height: 1,),
+                          Container(
+                              height: 70,
+                              child: PostCardWidges(post:snapshot.data![index])
+                              
+                          ),
+                        ],
                       );
                     },
                   );

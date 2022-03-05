@@ -45,71 +45,76 @@ class _RegisterScreenViewState extends State<RegisterScreenView> {
 
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(10),
-          child: Form(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 100,
+              padding: EdgeInsets.fromLTRB(10,40,10,10),
+              child: Form(
+                child: Column(
+                  children: [
+                     Image.asset(
+              'asset/logo.png',
+              width: 210,),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      controller: _emailContoller,
+                      decoration: InputDecoration(
+                          labelText: "Email",
+                          hintText: "Email",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    TextFormField(
+                      controller: _usernameController,
+                      decoration: InputDecoration(
+                          labelText: "Username",
+                          hintText: "Username",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    TextFormField(
+                      controller: _passwordController,
+                      decoration: InputDecoration(
+                          labelText: "Password",
+                          hintText: "Password",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    TextFormField(
+                      controller: _jobController,
+                      decoration: InputDecoration(
+                          labelText: "Job",
+                          hintText: "Job",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    ElevatedButton(
+                      onPressed: _trySubmit,
+                      child: Text("Register"),
+                      style: ElevatedButton.styleFrom(
+                          fixedSize: Size(200, 40),
+                          textStyle: TextStyle(
+                            fontSize: 20,
+                          )),
+                    ),
+                  ],
                 ),
-                TextFormField(
-                  controller: _emailContoller,
-                  decoration: InputDecoration(
-                      labelText: "Email",
-                      hintText: "Email",
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                TextFormField(
-                  controller: _usernameController,
-                  decoration: InputDecoration(
-                      labelText: "Username",
-                      hintText: "Username",
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                TextFormField(
-                  controller: _passwordController,
-                  decoration: InputDecoration(
-                      labelText: "Password",
-                      hintText: "Password",
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                TextFormField(
-                  controller: _jobController,
-                  decoration: InputDecoration(
-                      labelText: "Job",
-                      hintText: "Job",
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                ElevatedButton(
-                  onPressed: _trySubmit,
-                  child: Text("Register"),
-                  style: ElevatedButton.styleFrom(
-                      fixedSize: Size(200, 40),
-                      textStyle: TextStyle(
-                        fontSize: 20,
-                      )),
-                ),
-              ],
+              ),
             ),
-          ),
+          
         ),
-      ),
+      
     );
   }
 
