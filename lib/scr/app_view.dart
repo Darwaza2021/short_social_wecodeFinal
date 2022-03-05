@@ -22,14 +22,20 @@ class _AppViewState extends State<AppView> {
        theme: ThemeData(
         primarySwatch: Colors.cyan,
         backgroundColor: Colors.cyan,
-        //primaryColorBrightness: Brightness.light,
         buttonTheme: ButtonTheme.of(context).copyWith(
           buttonColor: Colors.cyan,
           textTheme: ButtonTextTheme.primary,
+          
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
+            
+
           ),
+                      
+
         ),
+        
+
       ),
       
       

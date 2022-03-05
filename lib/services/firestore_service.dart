@@ -23,21 +23,20 @@ collection('users').doc(newUser.uid).set
 addPosts(
       {required Post post,  GeneralUser? generalUser}) async {
     await _firebaseFirestore
-        .collection('users')
-        .doc(generalUser?.uid)
+       // .collection('users')
+      //  .doc(generalUser?.uid)
         .collection('posts')
         .add(post.toMap());
-  }
+}
 
 
-
-Stream<List<GeneralUser>> fetchCarsData() {
-    return _firebaseFirestore.collection('users').snapshots().map((event) {
+Stream<List<Post>> fetchPostData() {
+    return _firebaseFirestore.collection('posts').snapshots().map((event) {
       debugPrint('docs length =======>' + event.docs.length.toString());
 
       return event.docs
           .map(
-            (doc) => GeneralUser.fromMap(
+            (doc) => Post.fromMap(
               doc.data(),
             ),
           )

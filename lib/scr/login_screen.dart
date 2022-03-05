@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login_screen_view extends StatefulWidget {
-   Login_screen_view({ Key? key }) : super(key: key);
+  Login_screen_view({Key? key}) : super(key: key);
   static const routName = "login_screen_view";
 
   @override
@@ -13,7 +13,7 @@ class _Login_screen_viewState extends State<Login_screen_view> {
   TextEditingController _emailContoller = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
-   var isValid = false;
+  var isValid = false;
   final _formKey = GlobalKey<FormState>();
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -21,62 +21,56 @@ class _Login_screen_viewState extends State<Login_screen_view> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      
-
       appBar: AppBar(
         title: Text("Login"),
       ),
       body: SingleChildScrollView(
-      
         child: Container(
-          
+          padding: EdgeInsets.all(10),
+      
           child: Form(
             key: _formKey,
             child: Column(
-              
-
-            children: [
-
-              SizedBox(height: 100,),
-
-              TextFormField(
-                controller:_emailContoller ,
-                decoration: InputDecoration(
-                  labelText: "Email",
-                  hintText:  "Email",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+              children: [
+                SizedBox(
+                  height: 100,
                 ),
-              ),
-
-              SizedBox(height: 25,),
-              TextFormField(
-                controller:_passwordController ,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  hintText:  "Password",
-                    border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
-
+                TextFormField(
+                  controller: _emailContoller,
+                  decoration: InputDecoration(
+                      labelText: "Email",
+                      hintText: "Email",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10))),
                 ),
-              ),
+                SizedBox(
+                  height: 25,
+                ),
+                TextFormField(
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                      labelText: "Password",
+                      hintText: "Password",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                ElevatedButton(
+                  onPressed: _tryLogin,
+                   child: Text("Login"),
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(200, 40),
+                    textStyle: TextStyle(
+                      fontSize: 20,
+                    
+                    )
+                  ),
 
-
-              SizedBox(height: 25,),
-
-                  ElevatedButton(
-                     onPressed:   _tryLogin,
-                     
-                     
-                     
-                    child: Text("Login")
-                 ),
-
-            ],
-          ),
+                   ),
+              ],
+            ),
           ),
         ),
       ),
@@ -84,7 +78,7 @@ class _Login_screen_viewState extends State<Login_screen_view> {
   }
 
   //trySUbmit funcion after pressed the submit button
-   void _tryLogin() async {
+  void _tryLogin() async {
     FocusScope.of(context).unfocus();
 
     if (_formKey.currentState!.validate()) {
@@ -98,7 +92,7 @@ class _Login_screen_viewState extends State<Login_screen_view> {
         print(e.toString());
       }
 
-    //add the scackBar
+      //add the scackBar
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Processing Data'),
@@ -113,7 +107,7 @@ class _Login_screen_viewState extends State<Login_screen_view> {
       print(_passwordController.text);
 
       Navigator.pushNamed(context, "user_dashbord_scr");
-    // todo: show an error when the email or the password was wrong
+      // todo: show an error when the email or the password was wrong
+    }
   }
-}
 }

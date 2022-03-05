@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shortsocial/scr/general_user/edit_profile_screen.dart';
+import 'package:shortsocial/scr/login_screen.dart';
 
 class HomeDashboardScreenView extends StatefulWidget {
   const HomeDashboardScreenView({ Key? key }) : super(key: key);
@@ -43,6 +46,13 @@ class _HomeDashboardScreenViewState extends State<HomeDashboardScreenView> {
                 leading: Icon(Icons.home),
 
                 onTap:(){
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeDashboardScreenView(),
+                  ),
+                );
+
 
                 } ,
               ),
@@ -50,20 +60,28 @@ class _HomeDashboardScreenViewState extends State<HomeDashboardScreenView> {
                 title: Text("Edit Profile"),
                 leading: Icon(Icons.edit),
 
-                // onTap:(){
-                //   Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => StudentSettingsScreen(),
-                //   ),
-                // );
-                // } ,
+                onTap:(){
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EditProfileScreenView(),
+                  ),
+                );
+                } ,
               ),
               ListTile(
                 title: Text("Logout"),
                 leading: Icon(Icons.logout),
 
-                onTap:(){} ,
+                onTap:()async{
+                  await FirebaseAuth.instance.signOut();
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Login_screen_view(),
+                  ),
+                    );
+                } 
               )
           ]
         ),

@@ -9,6 +9,7 @@ String? username;
 String? uid;
 String? password;
 String? job;
+String? bio;
 
 
 GeneralUser({
@@ -17,6 +18,7 @@ GeneralUser({
     this.uid,
     this.password,
     this.job,
+    this.bio,
   });
 
   GeneralUser copyWith({
@@ -25,6 +27,7 @@ GeneralUser({
     String? uid,
     String? password,
     String? job,
+    String? bio,
   }) {
     return GeneralUser(
       email: email ?? this.email,
@@ -32,6 +35,7 @@ GeneralUser({
       uid: uid ?? this.uid,
       password: password ?? this.password,
       job: job ?? this.job,
+      bio: bio ?? this.bio,
     );
   }
 
@@ -42,6 +46,7 @@ GeneralUser({
       'uid': uid,
       'password': password,
       'job': job,
+      'bio' : bio
     };
   }
 
@@ -52,6 +57,7 @@ GeneralUser({
       uid: map['uid'],
       password: map['password'],
       job: map['job'],
+      bio: map['bio']
     );
   }
 
@@ -61,7 +67,7 @@ GeneralUser({
 
   @override
   String toString() {
-    return 'GeneralUser(email: $email, username: $username, uid: $uid, password: $password, job: $job)';
+    return 'GeneralUser(email: $email, username: $username, uid: $uid, password: $password, job: $job,bio:$bio)';
   }
 
   @override
@@ -73,7 +79,8 @@ GeneralUser({
       other.username == username &&
       other.uid == uid &&
       other.password == password &&
-      other.job == job;
+      other.job == job&&
+      other.bio == bio;
   }
 
   @override
@@ -82,6 +89,7 @@ GeneralUser({
       username.hashCode ^
       uid.hashCode ^
       password.hashCode ^
-      job.hashCode;
+      job.hashCode^
+      bio.hashCode;
   }
 }
